@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Random Password Generator</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="container1">
+                <h1 class="title">Generate a Random Password</h1>
+                <div class="row">
+                    <input type="text" class="input" id="input"
+                        placeholder="Password">
+                    <button type="button" onclick="copyTextToClipboard()"
+                        class="copy-button">Copy</button>
+                </div>
+
+                <button class="btn" onclick="Random()">Generate
+                    Password</button>
+            </div>
+        </div>
+
+    </body>
+    <script>
+   
+        function Random() {
+            var inputElement = document.getElementById("input");
+
+          var randomPassword =
+        Math.random().toString(36).slice(2) + Math.random().toString(36).slice(2);
+        inputElement.value = randomPassword;
+        }
+        function copyTextToClipboard() {
+            var inputElement = document.getElementById("input");
+
+  navigator.clipboard.writeText(inputElement.value);
+}
+
+
+        </script>
+</html>
